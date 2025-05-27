@@ -28,6 +28,7 @@ extra["springAiVersion"] = "1.0.0"
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.ai:spring-ai-starter-model-openai")
     implementation("org.postgresql:postgresql")
 

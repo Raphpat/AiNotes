@@ -19,7 +19,9 @@ export class AddNoteComponent {
   onSubmit() {
     if (this.noteContent.trim()) {
       const note: Note = {
-        text: this.noteContent.trim()
+        text: this.noteContent.trim(),
+        createdAt: new Date()
+        
       };
 
       this.noteService.addNote(note).subscribe({

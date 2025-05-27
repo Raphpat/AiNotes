@@ -1,8 +1,8 @@
 /* Import style modules */
 @use 'styles/variables' as *;
 @use 'styles/mixins' as *;
-@use 'styles/typography';
-@use 'styles/global';
+@use 'styles/typography' as *;
+@use 'styles/global' as *;
 
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');

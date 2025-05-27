@@ -1,10 +1,11 @@
 package org.pattie.ai_notes.controller;
 
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.pattie.ai_notes.dto.Note;
 import org.pattie.ai_notes.service.NoteService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,18 +15,14 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/notes")
 @CrossOrigin
+@RequiredArgsConstructor
 public class NoteController {
     Logger log = LoggerFactory.getLogger(NoteController.class);
 
     private final NoteService noteService;
 
-    @Autowired
-    public NoteController(NoteService noteService) {
-        this.noteService = noteService;
-    }
-
     @GetMapping("")
-    public List<Note> getAllNotes() {
+    public List<Note> getAll() {
         return noteService.getAllNotes();
     }
 
@@ -35,24 +32,24 @@ public class NoteController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Note> getNote(@PathVariable Long id) {
-        return noteService.getNote();
+    public Note get(@PathVariable Long id) {
+        return noteService.getNote(id);
     }
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
-    public void createNote(@RequestBody Note note) {
+    public void create(@Valid @RequestBody Note note) {
         noteService.createNote(note);
     }
 
     @PutMapping("/{id}")
-    public Note updateNote(@RequestBody Note note, @PathVariable Long id) {
+    public Note update(@RequestBody Note note, @PathVariable Long id) {
         return noteService.updateNote(note, id);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteNote(@PathVariable Long id) {
+    public void delete(@PathVariable Long id) {
         noteService.deleteNote(id);
     }
 }
