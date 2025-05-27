@@ -1,0 +1,25 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.add-note {
+  @include card;
+
+  h2 {
+    @include heading-2;
+    margin-bottom: map-get($spacing, 'base');
+  }
+}
+
+.form-group {
+  margin-bottom: map-get($spacing, 'base');
+}
+
+textarea {
+  @include input-base;
+  min-height: 120px;
+  resize: vertical;
+}
+
+button {
+  @include button-primary;
+} 

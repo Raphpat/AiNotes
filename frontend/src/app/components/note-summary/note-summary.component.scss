@@ -1,0 +1,28 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.summary-section {
+  @include card;
+
+  h2 {
+    @include heading-2;
+    margin-bottom: map-get($spacing, 'base');
+  }
+}
+
+button {
+  @include button-success;
+  margin-bottom: map-get($spacing, 'base');
+}
+
+.summary-content {
+  background: map-get($colors, 'gray', '50');
+  padding: map-get($spacing, 'base');
+  border-radius: map-get($border-radius, 'base');
+  border: 1px solid map-get($colors, 'gray', '200');
+
+  p {
+    @include body-text;
+    margin: 0;
+  }
+} 

@@ -1,0 +1,41 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: map-get($spacing, 'xl');
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  margin-bottom: map-get($spacing, '2xl');
+
+  h1 {
+    @include heading-1;
+    margin: 0;
+  }
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: map-get($spacing, 'xl');
+  align-items: start;
+}
+
+.left-panel {
+  @include flex-column;
+  gap: map-get($spacing, 'xl');
+  position: sticky;
+  top: map-get($spacing, 'xl');
+}
+
+.right-panel {
+  min-height: 100%;
+  background: white;
+  border-radius: map-get($border-radius, 'lg');
+  box-shadow: map-get($shadows, 'base');
+  padding: map-get($spacing, 'lg');
+}

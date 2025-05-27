@@ -1,0 +1,17 @@
+<div class="add-note">
+  <h2>Add New Note</h2>
+  <form (ngSubmit)="onSubmit()" #noteForm="ngForm">
+    <div class="form-group">
+      <textarea
+        [(ngModel)]="noteContent"
+        name="content"
+        placeholder="Write your note here..."
+        required
+        rows="4"
+      ></textarea>
+    </div>
+    <button type="submit" [disabled]="!noteForm.form.valid">
+      Save Note
+    </button>
+  </form>
+</div> 

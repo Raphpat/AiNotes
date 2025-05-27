@@ -1,0 +1,86 @@
+// Colors
+$colors: (
+  'primary': (
+    'light': #3b82f6,
+    'base': #2563eb,
+    'dark': #1d4ed8
+  ),
+  'success': (
+    'light': #10b981,
+    'base': #059669,
+    'dark': #047857
+  ),
+  'gray': (
+    '50': #f8fafc,
+    '100': #f1f5f9,
+    '200': #e2e8f0,
+    '300': #cbd5e1,
+    '400': #94a3b8,
+    '500': #64748b,
+    '600': #475569,
+    '700': #334155,
+    '800': #1e293b,
+    '900': #0f172a
+  ),
+  'text': (
+    'primary': #1f2937,
+    'secondary': #4b5563,
+    'muted': #6b7280
+  )
+);
+
+// Typography
+$font-sizes: (
+  'xs': 0.75rem,    // 12px
+  'sm': 0.8125rem,  // 13px
+  'base': 0.9375rem, // 15px
+  'lg': 1.25rem,    // 20px
+  'xl': 1.5rem,     // 24px
+  '2xl': 2.5rem     // 40px
+);
+
+$font-weights: (
+  'normal': 400,
+  'medium': 500,
+  'semibold': 600
+);
+
+// Spacing
+$spacing: (
+  'xs': 0.5rem,    // 8px
+  'sm': 0.75rem,   // 12px
+  'base': 1rem,    // 16px
+  'md': 1.25rem,   // 20px
+  'lg': 1.5rem,    // 24px
+  'xl': 2rem,      // 32px
+  '2xl': 2.5rem    // 40px
+);
+
+// Border radius
+$border-radius: (
+  'sm': 4px,
+  'base': 8px,
+  'lg': 12px
+);
+
+// Shadows
+$shadows: (
+  'sm': (0 1px 3px rgba(0, 0, 0, 0.1)),
+  'base': (0 4px 6px -1px rgba(0, 0, 0, 0.1)),
+  'hover': (0 4px 8px rgba(0, 0, 0, 0.12)),
+);
+
+// Transitions
+$transitions: (
+  'fast': 0.2s,
+  'base': 0.3s
+);
+
+// Breakpoints
+$breakpoints: (
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
+  '2xl': 1536px
+); 
