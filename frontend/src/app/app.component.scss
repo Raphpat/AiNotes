@@ -1,13 +1,16 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
 .app-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: map-get($spacing, 'xl');
   min-height: 100vh;
 }
 
 header {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: map-get($spacing, '2xl');
 
   h1 {
     font-size: 2.5rem;
@@ -20,21 +23,26 @@ header {
 .main-content {
   display: grid;
   grid-template-columns: 400px 1fr;
-  gap: 2rem;
+  gap: map-get($spacing, 'xl');
   align-items: start;
+
+  @include respond-to('lg') {
+    grid-template-columns: 350px 1fr;
+  }
+
+  @include respond-to('md') {
+    grid-template-columns: 1fr;
+  }
 }
 
 .left-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  @include flex-column;
+  gap: map-get($spacing, 'xl');
   position: sticky;
-  top: 2rem;
+  top: map-get($spacing, 'xl');
 }
 
 .right-panel {
   min-height: 100%;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  @include card;
 }

@@ -1,54 +1,25 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
 .add-note {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  @include card;
 
   h2 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
+    @include heading-2;
+    margin-bottom: map-get($spacing, 'base');
   }
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: map-get($spacing, 'base');
 }
 
 textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  resize: vertical;
-  font-family: inherit;
-  font-size: 0.9375rem;
+  @include input-base;
   min-height: 120px;
-  transition: border-color 0.2s;
-
-  &:focus {
-    outline: none;
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-  }
+  resize: vertical;
 }
 
 button {
-  width: 100%;
-  background: #3b82f6;
-  color: white;
-  border: none;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 0.9375rem;
-  transition: background-color 0.2s;
-
-  &:disabled {
-    background: #e2e8f0;
-    cursor: not-allowed;
-  }
-
-  &:hover:not(:disabled) {
-    background: #2563eb;
-  }
+  @include button-primary;
 } 

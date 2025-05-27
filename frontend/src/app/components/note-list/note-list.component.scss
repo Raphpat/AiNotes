@@ -1,42 +1,39 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
 .note-list {
-  padding: 1.5rem;
+  padding: map-get($spacing, 'lg');
 
   h2 {
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid #e2e8f0;
+    @include heading-2;
+    margin-bottom: map-get($spacing, 'lg');
+    padding-bottom: map-get($spacing, 'sm');
+    border-bottom: 1px solid map-get($colors, 'gray', '200');
   }
 }
 
 .notes {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  @include grid-auto-fill(280px);
 }
 
 .note-card {
-  background: #f8fafc;
-  padding: 1.25rem;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-  transition: transform 0.2s, box-shadow 0.2s;
+  background: map-get($colors, 'gray', '50');
+  padding: map-get($spacing, 'md');
+  border-radius: map-get($border-radius, 'base');
+  border: 1px solid map-get($colors, 'gray', '200');
+  transition: transform map-get($transitions, 'fast'), box-shadow map-get($transitions, 'fast');
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: map-get($shadows, 'hover');
   }
 
   p {
-    margin: 0 0 0.75rem 0;
-    word-break: break-word;
-    font-size: 0.9375rem;
-    color: #1f2937;
-    line-height: 1.5;
+    @include body-text;
+    margin: 0 0 map-get($spacing, 'sm') 0;
   }
 
   small {
-    color: #6b7280;
-    font-size: 0.8125rem;
+    @include small-text;
   }
 } 

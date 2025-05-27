@@ -1,0 +1,54 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Base typography styles
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.5;
+  color: map-get(map-get($colors, 'text'), 'primary');
+  background-color: map-get($colors, 'gray', '50');
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: map-get($font-weights, 'semibold');
+  color: map-get(map-get($colors, 'text'), 'primary');
+  margin: 0;
+}
+
+h1 {
+  @include heading-1;
+}
+
+h2 {
+  @include heading-2;
+}
+
+p {
+  @include body-text;
+  margin: 0 0 map-get($spacing, 'base') 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+small {
+  @include small-text;
+}
+
+// Utility classes
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: map-get(map-get($colors, 'text'), 'muted');
+}
+
+.text-primary {
+  color: map-get(map-get($colors, 'primary'), 'light');
+}
+
+.text-success {
+  color: map-get(map-get($colors, 'success'), 'light');
+} 

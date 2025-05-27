@@ -1,6 +1,13 @@
+/* Import style modules */
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+@use 'styles/typography';
+@use 'styles/global';
+
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -21,5 +28,5 @@ h1, h2, h3, h4, h5, h6 {
 
 button {
   font-family: inherit;
-  font-weight: 500;
+  font-weight: map-get($font-weights, 'medium');
 }
