@@ -1,36 +1,54 @@
 .add-note {
-  padding: 20px;
-  max-width: 600px;
-  margin: 0 auto;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .form-group {
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
 textarea {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
   resize: vertical;
   font-family: inherit;
+  font-size: 0.9375rem;
+  min-height: 120px;
+  transition: border-color 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
 }
 
 button {
-  background: #007bff;
+  width: 100%;
+  background: #3b82f6;
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 0.9375rem;
+  transition: background-color 0.2s;
 
   &:disabled {
-    background: #ccc;
+    background: #e2e8f0;
     cursor: not-allowed;
   }
 
   &:hover:not(:disabled) {
-    background: #0056b3;
+    background: #2563eb;
   }
 } 
