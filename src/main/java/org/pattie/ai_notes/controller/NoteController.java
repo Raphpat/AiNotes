@@ -26,33 +26,33 @@ public class NoteController {
 
     @GetMapping("")
     public List<Note> getAllNotes() {
-        log.info("Fetching all notes");
         return noteService.getAllNotes();
+    }
+
+    @GetMapping("/summary")
+    public String getSummary() {
+        return "Not implemented yet";
     }
 
     @GetMapping("/{id}")
     public Optional<Note> getNote(@PathVariable Long id) {
-        log.info("Fetching note with id: {}", id);
         return noteService.getNote();
     }
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
     public void createNote(@RequestBody Note note) {
-        log.info("Creating note: {}", note.toString());
         noteService.createNote(note);
     }
 
     @PutMapping("/{id}")
     public Note updateNote(@RequestBody Note note, @PathVariable Long id) {
-        log.info("updating note with id: {}, {}", id, note.toString());
         return noteService.updateNote(note, id);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteNote(@PathVariable Long id) {
-        log.info("deleting note with id: {}", id);
         noteService.deleteNote(id);
     }
 }
