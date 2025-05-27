@@ -1,0 +1,11 @@
+<div class="note-list">
+  <h2>Your Notes</h2>
+  <div class="notes">
+    @for (note of notes; track note.id) {
+      <div class="note-card">
+        <p>{{ note.text }}</p>
+        <small>Created: {{ note.createdAt | date:'medium' }}</small>
+      </div>
+    }
+  </div>
+</div> 
