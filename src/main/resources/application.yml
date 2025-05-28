@@ -3,7 +3,10 @@ spring:
     name: ai-notes
   ai:
     openai:
-      api-key: 1325456798
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        model: gpt-4.1-mini
+        max-tokens: 4096
   datasource:
     hikari:
       connection-timeout: 20000

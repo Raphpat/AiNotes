@@ -2,6 +2,7 @@ package org.pattie.ai_notes.controller;
 
 import jakarta.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.pattie.ai_notes.dto.Note;
 import org.pattie.ai_notes.service.NoteService;
@@ -25,8 +26,8 @@ public class NoteController {
   }
 
   @GetMapping("/summary")
-  public String getSummary() {
-    return "Not implemented yet";
+  public Optional<String> getSummary() {
+    return Optional.of(noteService.getSummary());
   }
 
   @GetMapping("/{id}")

@@ -26,6 +26,8 @@ services:
   #      SPRING_DATASOURCE_USERNAME: admin
   #      SPRING_DATASOURCE_PASSWORD: password
   #      SPRING_PROFILES_ACTIVE: docker
+  #    env_file:
+  #      - dev.env
   #    ports:
   #      - "8080:8080"
   #    depends_on:
