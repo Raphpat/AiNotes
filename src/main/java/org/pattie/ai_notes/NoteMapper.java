@@ -7,13 +7,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class NoteMapper {
 
-    public Note map(NoteEntity entity) {
-        return new Note(entity.getId(), entity.getText(), entity.getCreatedAt());
-    }
+  public Note map(NoteEntity entity) {
+    return new Note(entity.getId(), entity.getText(), entity.getCreatedAt());
+  }
 
-    public NoteEntity update(NoteEntity entity, Note dto) {
-        entity.setText(dto.text());
-        entity.setCreatedAt(dto.createdAt());
-        return entity;
-    }
+  public NoteEntity update(NoteEntity entity, Note dto) {
+    entity.setText(dto.text());
+    entity.setCreatedAt(dto.createdAt());
+    return entity;
+  }
 }
