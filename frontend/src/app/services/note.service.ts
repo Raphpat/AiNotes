@@ -22,4 +22,4 @@ export class NoteService {
   getSummary(): Observable<string> {
     return this.http.get<string>(`${this.apiUrl}/summary`);
   }
-} 
+}
